@@ -12,12 +12,11 @@ Przykładowe zastosowanie to edycja:
 - blogów poprzez API: wordpress, etc.
 - społecznościowych: twitter, FB, G+
 - poczty elektronicznej
-- 
+
 
 Edytor składa się z dwóch części:
 Napisana w języku PHP:
 - obsługa połączeń, dostępu do danych
--
 
 Napisana w JS:
 - dynamiczna wymiana danych poprzez AJAX
