@@ -1,7 +1,7 @@
 plainedit
 =========
 
-plainedit.com
+http://plainedit.com
 
 Edytor ma służyć do edycji treści, które są przechowywane na innych serwerach.
 
@@ -10,6 +10,7 @@ Przykładowe zastosowanie to edycja:
 - repozytorium svn, git, ...
 - rekordów bazy danych
 - blogów poprzez API: wordpress, etc.
+- opisów produktów w sklepach: Magento, ...
 - społecznościowych: twitter, FB, G+
 - poczty elektronicznej
 
