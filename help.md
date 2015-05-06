@@ -38,7 +38,7 @@ mogę kliknąć dany projekt i będę miał listę już zrobionych i niezrobiony
 popdowiadanie na podstawie ilości zbieżnych tagów, jeśli podam tę samą godzinę to będą te w pierwszej kolejnosći.
 Nie jest potrzebny podział na projekty, ponieważ one będą automatycznie generowane:
     gregor
-        gregor-montagen.com
+        website
 
 ZASTOSOWANIA:
 ------------
@@ -51,23 +51,12 @@ View1 = @today @call @tom
 Nazwa widoku = co w skład niego wchodzi i w jakiej kolejnosci
 Dziś = @Today
 
-@gregor-montagen // czas trawnia projektu
+@website // czas trawnia projektu
 @start @2015-04
 @stop @2015-06
 @remind @daily
 
-=@gregor-montagen @remind // zwraca co ile ma być powtórka
-
-@2015-04-29
-@pawel
-@gregor-montagen
-* grafika
-* strona www
-@ja
-* @tel do gregora
-czy ma fotki * to jest komentarz, moze byc wiecej z rozmowy
-
-
+=@website @remind // zwraca co ile ma być powtórka
 @Project1 @Worker
 
 
