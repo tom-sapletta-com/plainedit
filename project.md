@@ -1,6 +1,17 @@
 DO ZROBIENIA
 ============
 
+WYGLĄD
+------------
+- zmiana kolorów listy numeracji, w liniach gdzie nie ma tasku 
+- dodanie edytowalnego css z automatyzacją pól - CSS FORM i odświeżaniem na bieżąco
+- tworzenie pluginów, templatek.
+
+FUNKCJE
+------------
+- PHP: backend language, multijęzyczność
+- PHP: plik z informacją o zmianach, logi , możliwość pobrania przez AJAX
+
 - refaktoryzacja kodu w celu uzyskania kilku odrębnych klas:
     - textarea field
         - zdarzenia
@@ -19,6 +30,17 @@ DO ZROBIENIA
         * isValueDate
         * getValueTime
         * isValueTime
+        * isTask ( has - + ! ? )
+        * isParam - waluta, czas, itp,   + refaktoryzacja: 2h
+        * getTaskByTag('SPORT')
+        
+    class TASK
+        task
+            tag
+            value            
+            param: day, time
+        getSumParamOfAllTasks( param, tag )
+            time, PLAINEDIT 
         
 MODUŁY
 ------------
@@ -38,7 +60,8 @@ MODUŁY
             - getData
             - getTime
             - getUser
-    
+- settings
+    - zmiana kolejność wyświetlania od przyszłości do przeszłości i na odwrót 
 
 TAGI
 ------------

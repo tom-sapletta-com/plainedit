@@ -9,7 +9,10 @@ $filesettings = "data/2015.05.settings.txt";
 $filecontacts = "data/2015.05.contacts.txt";
 $fileprojects = "data/2015.05.projects.txt";
 $filebudget = "data/2015.05.budget.txt";
+$fileaffirmations = "data/2015.05.affirmations.txt";
 $filehelp = "help.md";
+
+require_once('php/markdown_extended.php');
 
 ?>
 <!DOCTYPE html>
@@ -39,10 +42,12 @@ $filehelp = "help.md";
             width: 650px;
             margin: 0;
             padding: 0;
-            background-color: #333;
+            background-color: #222;
             margin-left: 10px;
         }
-
+        .page .parts {
+              margin-left: 36px;
+        }
         .text {
             border: 1px solid darkgreen;
         }
@@ -85,7 +90,7 @@ $filehelp = "help.md";
         }
 
         .tasks_by_tag_done, .tasks_by_tag_notdone, .tasks_done, .tasks_not_done {
-            width: 600px;
+            width: 638px;
             height: 110px;
             margin: 0;
             padding: 0;
@@ -94,6 +99,7 @@ $filehelp = "help.md";
             color: #fafafa;
             text-shadow: 0 0px 0 #111;
             font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+            border: 0;
         }
 
         .tasks_by_tag_done, .tasks_by_tag_notdone {
@@ -118,11 +124,13 @@ $filehelp = "help.md";
             font-size: 16px;
             margin: 0;
             padding: 0;
+            margin-bottom:2px;
         }
 
         .current_tag {
             font-size: 19px;
             color: #000;
+            height: 27px;
         }
 
         #search_field, #value_field {
@@ -150,7 +158,7 @@ $filehelp = "help.md";
         }
 
         .text_on .weekEdit {
-            margin-top: 0;
+            margin-top: 2px;
         }
 
         .weekCheck {
@@ -207,7 +215,7 @@ $filehelp = "help.md";
         .tagEdit {
             /*position: fixed;*/
             /*top: 25px;*/
-            /*height: 150px;*/
+            height: 150px;
             /*position: absolute;*/
             width: 640px;
             z-index: 999;
@@ -216,7 +224,7 @@ $filehelp = "help.md";
             /*height: 100px;*/
             margin-left: 0px;
             /* .tagEditLine height: */
-            margin-top: 96px;
+            margin-top: 62px;
         }
 
         .tag_on .tagEdit {
@@ -225,7 +233,7 @@ $filehelp = "help.md";
 
         .tagEditLine {
             /* .tagEdit margin-top: ...; */
-            height: 96px;
+            height: 62px;
             position: fixed;
             top: 0;
             /*position: absolute;*/
@@ -272,7 +280,10 @@ $filehelp = "help.md";
             background-color: #444;
         }
 
-        .navi {
+        .tagEditLine .navi,
+         .left_navi .navi
+         {
+
             margin: 0;
             padding: 0;
             padding-top: 3px;
@@ -282,11 +293,17 @@ $filehelp = "help.md";
 
         }
 
-        .navi li {
+        .tagEditLine .navi li,
+        .left_navi .navi li
+         {
+            display: inline;
+        }
+
+        .tagEditLine .navi li div {
             display: inline;
             padding: 2px 5px 2px 5px;
-            background-color: #111111;
-            border: 1px solid #003366;
+            background-color: #333;
+            border: 1px solid #222;
         }
 
         .navi a {
@@ -301,9 +318,56 @@ $filehelp = "help.md";
         .html {
             padding-top: 40px;
         }
+        #affirmations {
+            color: rgb(255, 255, 221);
+            font-size:14pt;
+            font-family: Verdana;
+            line-height: 1.6em;
+            font-weight:200;
+        }
+        .left_navi .navi{
+
+            width: 20px;
+            text-align:left;
+            float:left;
+            display: block;
+            position: fixed;
+            background-color: transparent;
+        }
+        .left_navi li {
+            padding:0;
+            border: 0;
+        }
+        .left_navi li div {
+
+          border: 2px solid #333;
+          width: 12px;
+          background-color: #444;
+          margin: 0;
+          padding: 2px 8px 2px 8px;
+        }
+        .left_navi .navi a {
+        font-size: 11pt;
+          text-decoration: blink;
+        }
     </style>
 </head>
 <body class="page">
+
+
+        <div class="left_navi">
+            <ul class="navi">
+                <li><a href="#todo" id="navi_todo"><div>Z a d a n i a</div></a></li>
+                <li><a href="#projects" id="navi_projects"><div>P r o j e k t y</div></a></li>
+                <li><a href="#plans" id="navi_plans"><div>P l a n y</div></a></li>
+                <li><a href="#budget" id="navi_budget"><div> B u d ż e t</div></a></li>
+                <li><a href="#contacts" id="navi_contacts"><div> K o n t a k t y</div></a></li>
+                <li><a href="#settings" id="navi_settings"><div> U s t a w i e n i a</div></a></li>
+                <li><a href="#affirmations" id="navi_affirmations"><div> +</div></a></li>
+                <li><a href="#help" id="navi_help"><div> P o m o c</div></a></li>
+            </ul>
+        </div>
+
 
 <div class="parts">
     <!--
@@ -344,28 +408,18 @@ $filehelp = "help.md";
 
         <div class="weeks">
             <ul class="navi">
-                <li><a href="#todo" id="navi_todo"> Zadania </a></li>
-                <li><a href="#2015_04"> &ltApril] </a></li>
-                <li><a href="#2015_04_1-7"> [1-7] </a></li>
-                <li><a href="#2015_04_7-4"> [7-14] </a></li>
-                <li><a href="#2015_04_14_21"> [14-21] </a></li>
-                <li><a href="#2015_04_21-28"> [21-28] </a></li>
-                <li><a href="#2015_04_28"> [28-4] </a></li>
-                <li><a href="#2015_05"> [Mai&gt </a></li>
+
+                <li><a href="#2015_04"><div>&ltApril]</div></a></li>
+                <li><a href="#2015_04_1-7"><div> [1-7] </div></a></li>
+                <li><a href="#2015_04_7-4"><div> [7-14] </div></a></li>
+                <li><a href="#2015_04_14_21"><div> [14-21] </div></a></li>
+                <li><a href="#2015_04_21-28"><div> [21-28] </div></a></li>
+                <li><a href="#2015_04_28"><div> [28-4] </div></a></li>
+                <li><a href="#2015_05"><div> [Mai&gt </div></a></li>
             </ul>
         </div>
 
-        <div class="weeks">
-            <ul class="navi">
-                <!--                <li><a href="#todo" id="navi_todo"> Zadania </a></li>-->
-                <li><a href="#projects" id="navi_projects"> Projekty </a></li>
-                <li><a href="#plans" id="navi_plans"> Plany </a></li>
-                <li><a href="#budget" id="navi_budget"> Budżet </a></li>
-                <li><a href="#contacts" id="navi_contacts"> Kontakty</a></li>
-                <li><a href="#settings" id="navi_settings"> Ustawienia </a></li>
-                <li><a href="#help" id="navi_help"> Pomoc </a></li>
-            </ul>
-        </div>
+
 
         <!--        <input type="submit" id="button_done" value="W trakcie"/>-->
         <!--        <input type="submit" id="button_done" value="Projekty"/>-->
@@ -534,12 +588,24 @@ $filehelp = "help.md";
         </div>
     </div>
 
+    <div class="html" id="affirmations">
+        Affirmations
+        <p>
+            <?php
+            $fileaffirmations = file_get_contents($fileaffirmations);
+            if (!empty($fileaffirmations)) {
+                // Always add a 'prettyprint' to <pre> elements
+                echo MarkdownExtended($fileaffirmations, array('pre' => 'prettyprint'));
+            }
+
+            ?>
+        </p>
+    </div>
+
     <div class="html" id="help">
         Pomoc
         <p>
             <?php
-
-            require_once('markdown_extended.php');
             $filehelp = file_get_contents($filehelp);
             if (!empty($filehelp)) {
                 // Always add a 'prettyprint' to <pre> elements
@@ -549,6 +615,8 @@ $filehelp = "help.md";
             ?>
         </p>
     </div>
+
+
 
 
 </div>

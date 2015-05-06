@@ -8,26 +8,31 @@ http://plainedit.com
 
 
 
-- In line with edit by cursor
+- In line with editing by cursor
 
 ![img](http://plainedit.com/img/plainedit_below_400.png)
 
+- Vertical Menu
 
-Edytor ma służyć do edycji treści, które są przechowywane na innych serwerach.
-Docelowo ma być narzędziem komunikacyjnym w TRAKCIE tworzenia projektów pomiędzy użytkownikami w czasie.
+![img](http://plainedit.com/img/plainedit_sport_horiz_400.png)
+
+
+Edytor ma służyć do edycji treści.
+Dane mogą być przechowywane pobierane z różnych źródeł i współdzielone pomiędzy użytkownikami.
+To coś więcej niż edytor, to narzędziem komunikacyjne, które pozwala na wspólną realizację zadań.
 
 Idea
 ------------
 - Aplikacja ma zastąpić zwykły notatnik, w każdym miejscu:
     - urządzenia mobilne, tablet, urządzenia stacjonarne, wydruk na papierze
 - bazowanie na notatniku - synonim prostoty i łatwość obsługi (edycja z klawiatury)
-- zmiana sposobu użycia samej aplikacji przez użytkownika
+Istotą jest zmiana sposobu podejścia do aplikacji:
     - zamiast użytkownik uczyć się aplikacji 
     - aplikacja uczy się rozumieć treść użytkownika 
         - dzięki analizie danych wprowadzanych przeza użytkownika
-- każda nowa treść wprowadza nowe informacje, które mogą być wykorzystane w późniejszym czasie jako
+- każda nowa treść może być wykorzystana w późniejszym czasie jako:
     - informacja zwrotna, podpowiedź przy tworzeniu nowego zadania
-    - powiadomienie
+    - powiadomienie gdy zadania nie są wykonane np po tygodniu, gdy jest kilka tych samych.
     - raporty okresowe z:
         - wykonanych zadań,
         - postępów w projektach
@@ -35,6 +40,16 @@ Idea
 
 Zasada działania
 ------------
+- Edycja w trybie tygodniowym
+- Zakładki tematyczne podzielone na:
+    - tasks
+    - ideas
+    - projects
+    - budget
+    - contacts
+    - settings
+    - help
+- kolejność wyświetlania od przyszłości do przeszłości (ewerntualne dostosowanie w pliku konfiguracyjnym)    
 - Gdy kursor znajduje się w nowej linii to wyświetlają się wszystkie nie wykonane zadania
 - Gdy kursor jest na TAGu, to jest wyświetlana lista zadań
 
@@ -56,7 +71,8 @@ Przykładowe zastosowanie to edycja:
 
 Technologie
 ------------
-Aplikacja przystosowanie do urządzeń mobilnych
+Aplikacja przystosowanie do urządzeń mobilnych.
+
 Edytor składa się z dwóch części:
 
 - Frontend 
