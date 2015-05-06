@@ -3,7 +3,31 @@
 http://plainedit.com
 
 Edytor ma służyć do edycji treści, które są przechowywane na innych serwerach.
+Docelowo ma być narzędziem komunikacyjnym w TRAKCIE tworzenia projektów pomiędzy użytkownikami w czasie.
 
+Idea
+------------
+- bazowanie na notatniku - synonim prostoty i łatwość obsługi (edycja z klawiatury)
+- zmiana sposobu użycia samej aplikacji przez użytkownika
+    - zamiast użytkownik uczyć się aplikacji 
+    - aplikacja uczy się rozumieć treść użytkownika 
+        - dzięki analizie danych wprowadzanych przeza użytkownika
+- każda nowa treść wprowadza nowe informacje, które mogą być wykorzystane w późniejszym czasie jako
+    - informacja zwrotna, podpowiedź przy tworzeniu nowego zadania
+    - powiadomienie
+    - raporty okresowe z:
+        - wykonanych zadań,
+        - postępów w projektach
+        - finansowych bilansów
+
+
+Zasady
+------------
+- Gdy kursor znajduje się w nowej linii to wyświetlają się wszystkie nie wykonane zadania
+- Gdy kursor jest na TAGu, to jest wyświetlana lista zadań
+
+ 
+ 
 Zastosowanie
 ------------
 Przykładowe zastosowanie to edycja:
@@ -18,29 +42,18 @@ Przykładowe zastosowanie to edycja:
 
 Technologie
 ------------
+
 Edytor składa się z dwóch części:
-Napisana w języku PHP:
- * obsługa połączeń, dostępu do danych
+
+- Frontend 
+    - JS z elementami jQuery (finalnie bez tej biblioteki)
+    - własne skrypty i klasy do zarządzania polem TEXTAREA, 
+        który w przyszłości będzie odrębną biblioteką a następnie frameworkiem 
+- Backend w PHP 
+    - biblioteka do renderowania markdown
+    - obsługa połączeń, dostępu do danych
 
 Napisana w JS:
- * dynamiczna wymiana danych poprzez AJAX
+- dynamiczna wymiana danych poprzez AJAX
 
 
-Idea
-------------
-
- * polega na zmianie sposobu do użycia samej aplikacji
- * zamiast użytkownik uczyć się aplikacji
- * aplikacjia stara się zrozumieć co wprowadza do systemu użytkownik
- * dzięki analizie danych wprowadzanych przeza użytkownika
- * stare zapiski można użyć
- * każda nowa treść ubogaca i wprowadza nowe możliwości
- * bazowanie na notatniku
- * w zamian otrzymywanie informacji zwrotnych
-
-Zasady
-------------
-* Jak bede w nowej linii to sie wyswietlają wszystkie nie wykonane zadania
-Zrobić pętlę, która będzie szukała w danych i bedzie zwracała
-zwrot = funkcja(), warunek
-* w pole tekstowe są wpisywane zadania
