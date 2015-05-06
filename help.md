@@ -16,7 +16,7 @@ DATA (dzień), MIEJSCE POBYTU, kraj
 
 11:00
     gregor
-        gregor-montagen
+        website
             * email naprawić
 
 18:00 (tag czasu)
@@ -42,11 +42,6 @@ Nie jest potrzebny podział na projekty, ponieważ one będą automatycznie gene
 
 ZASTOSOWANIA:
 ------------
-lista zakupów
-polecenia dla ludzi
-wspólne tworzenie projektów
-w przyszłości głosowe tworzenie
-
 
 tags * time, project
 timeline by dataTag
@@ -115,7 +110,7 @@ usuwanie poprzednich
 
 PODSTAWOWE PODZIAły
 ------------
-PLANY,PROJEKTY, FINANSE * tematyka * czechboxy
+PLANY,PROJEKTY, FINANSE * tematyka * checkbox'y
 * określanie zasobów czasowych na każde zadanie
 * lista przelewow na kazdy miesiac jest w osobnym planie na kazdy miesiac
 * jak zostanie jakis przelew wykonany to zostanie powiadomiona osoba
@@ -162,14 +157,11 @@ TEKSTOWE
 autouzupełnianie
 * tworzenie listy zadań na każdy dzień w tygodniu
 * jak się klika
-2015] [JULI] [AUG] [SEP] [OKT] [NOV] [DEC] [2016
-[1-7] [7-14] [14-21] [21-28] [28-4]
-[JAN] [FEB] [MAR] [April] [Mai] [JUN]
-[JULI] [AUG] [SEP] [OKT] [NOV] [DEC]
-2011#P1 P2 2012 Q1 Q2 Q3 Q4
-
-2013 2015 2016
-
+- [2015] [JULI] [AUG] [SEP] [OKT] [NOV] [DEC] [2016]
+- [1-7] [7-14] [14-21] [21-28] [28-4]
+- [JAN] [FEB] [MAR] [April] [Mai] [JUN]
+- [JULI] [AUG] [SEP] [OKT] [NOV] [DEC]
+- 2011#P1 P2 2012 Q1 Q2 Q3 Q4
 * możliwość klikania na każdy, przeladowanie strony
 * lista zadań tygodniami
 * podswietlanie tekstu w textarea
@@ -177,7 +169,6 @@ autouzupełnianie
 
 UŻYTKOWNICY
 ------------
-
 * filtrowanie wg użytkownika, pokazywanie jego zadań
 * wysyłanie zadań na miesiąc, tydzien lub dzień
 

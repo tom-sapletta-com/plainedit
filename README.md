@@ -38,7 +38,10 @@ Przykładowe zastosowanie to edycja:
 - opisów produktów w sklepach: Magento, ...
 - społecznościowych: twitter, FB, G+
 - poczty elektronicznej
-
+- lista zakupów
+- polecenia dla ludzi
+- wspólne tworzenie projektów
+- w przyszłości głosowe tworzenie
 
 Technologie
 ------------

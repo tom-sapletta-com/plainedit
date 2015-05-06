@@ -1,4 +1,8 @@
 <?php
+/**
+ * Created by tom-sapletta-com on 2015-05-06.
+ */
+
 $filedata = "data/2015.05.w1.txt";
 $fileplans = "data/2015.05.plans.txt";
 $filesettings = "data/2015.05.settings.txt";
