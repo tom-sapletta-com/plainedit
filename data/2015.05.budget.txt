@@ -1,0 +1,14 @@
+budget
+ 12121
+
+
+-------------------------
+ZAKUPY
+  AMAZON
+  - nowa karta SD
+
+PRZYCHODY
+ - projekt1
+
+WYDATKI
+ - mieszkanie

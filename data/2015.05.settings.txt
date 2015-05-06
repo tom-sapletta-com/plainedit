@@ -1,0 +1,24 @@
+template
+    green
+
+
+Tasks
+    name:
+    link:
+    file:
+
+Projects
+    name:
+    link:
+    file:
+
+Plans
+
+
+events:
+
+
+notifications:
+
+
+

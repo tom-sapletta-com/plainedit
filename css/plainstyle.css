@@ -1,0 +1,120 @@
+#sortable1, #sortable2, #sortable3 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin-right: 5px;
+    background: #eee;
+    padding: 1px;
+    background-color: #d3d3d3;
+}
+
+li, #sortable2 li, #sortable3 li {
+    margin: 0;
+    padding: 0;
+    height: 27px;
+    line-height: 1.0;
+    font-size: 1.2em;
+    background-color: ghostwhite;
+    width: 250px;
+    cursor: move;
+}
+
+li input[type=checkbox] {
+    background-color: red;
+    width: 25px;
+    left: .1em;
+    cursor: pointer;
+    line-height: 1.0;
+}
+
+li input[type=text] {
+    /*background-color: white;*/
+    width: 180px;
+    min-height: 0.7em;
+    /*height: 20px;*/
+    display: inline;
+    font-size: 0.8em;
+    line-height: 1.0;
+    /*font-size: 12px;*/
+    /*left: .1em;*/
+    /*margin: 1px;*/
+
+}
+
+.ui-checkbox {
+    display: inline;
+    width: 20px;
+    margin: 1px;
+    padding: 1px;
+}
+
+.ui-input-text {
+    display: inline;
+    margin-left: 24px;
+}
+body, input, select, textarea, button, .ui-btn {
+    font-size: 1em;
+    line-height: 1.0;
+}
+#textarea {
+    height:200px;
+    width:300px;
+}
+.highlight {
+    border: 1px solid black;
+    /*font-weight: bold;*/
+}
+
+#feedback {
+    font-size: 1.4em;
+}
+
+#selectable .ui-selecting {
+    background: #FECA40;
+}
+
+#selectable .ui-selected {
+    background: #F39814;
+    color: white;
+}
+
+#selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60%;
+}
+
+#selectable li {
+    margin: 3px;
+    padding: 0.4em;
+    font-size: 1.4em;
+    height: 18px;
+}
+.box_2 {
+    border: 1px solid green;
+    /*display:block;*/
+    width: 900px;
+    height:400px;
+    display:inline;
+    margin:0;
+    padding:0;
+}
+
+.box_2_1 {
+    border: 1px solid orange;
+    width: 350px;
+    height:300px;
+    display:block;
+    margin:0;
+    padding:0;
+}
+.box_2_2 {
+    border: 1px solid yellow;
+    width: 350px;
+    height:300px;
+    display:block;
+    margin:0;
+    padding:0;
+}
