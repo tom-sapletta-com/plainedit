@@ -1,25 +1,7 @@
 PlainEdit
 ============
 
-IDea rozwiązania
-------------
-info:
 
- * polega na zmianie sposobu do użycia samej aplikacji
- * zamiast użytkownik uczyć się aplikacji
- * aplikacjia stara się zrozumieć co wprowadza do systemu użytkownik
- * dzięki analizie danych wprowadzanych przeza użytkownika
- * stare zapiski można użyć
- * każda nowa treść ubogaca i wprowadza nowe możliwości
- * bazowanie na notatniku
- * w zamian otrzymywanie informacji zwrotnych
-
-ZASADY
-------------
-* Jak bede w nowej linii to sie wyswietlają wszystkie nie wykonane zadania
-Zrobić pętlę, która będzie szukała w danych i bedzie zwracała
-zwrot = funkcja(), warunek
-* w pole tekstowe są wpisywane zadania
 
 TAGI
 ------------

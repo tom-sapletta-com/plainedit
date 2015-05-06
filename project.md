@@ -1,16 +1,5 @@
-
-MARKETING
-------------
-* dodawanie krókich filmów ludzi z różnych branż
-
-* na FB * dodane dzięki ..
-* wysłanie email'a o określonej porze, albo teraz
-* tworzenie i wysyłanie wycen
-
-
 TODO:
 ------------
-Wyczyscic kod
 usuwac inputy jak linijka jest usuwana
 * usuwanie/dodawnia inputow
 * usuwanie/dodawanie linijki w textarea
@@ -35,9 +24,6 @@ edycja i przewijanie
 archiwizacja
 przypomnienia
 integracja z systemami SMS
-stworzyć trzecie okno do renderowania listy ul > li w HTML
-
-segregacja po dacie i innych atrybutach
 kalendarz
 wykorzystać bilbiotekę z renderowaniam UL>li
 
@@ -46,7 +32,10 @@ przeniesienie części kodu na serwer PHP
 * przeszukiwanie zadań
 
 
-DANE
+DO ZAIMPLEMENTOWANIA
+============
+
+FUNKCJE
 ------------
 * get Tag By Value
 * get Value By Tag
@@ -62,5 +51,8 @@ DANE
 * getValueTime
 * isValueTime
 
-detekcja:
-* daty, czasu, pieniedzy, sumowanie, odejmowanie
+
+TAGI
+------------
+* detekcja: daty, czasu, pieniedzy, sumowanie, odejmowanie
+* segregacja po dacie i innych atrybutach

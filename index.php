@@ -5,7 +5,7 @@ $filesettings = "data/2015.05.settings.txt";
 $filecontacts = "data/2015.05.contacts.txt";
 $fileprojects = "data/2015.05.projects.txt";
 $filebudget = "data/2015.05.budget.txt";
-$filehelp = "readme.md";
+$filehelp = "help.md";
 
 ?>
 <!DOCTYPE html>
@@ -536,9 +536,7 @@ $filehelp = "readme.md";
             <?php
 
             require_once('markdown_extended.php');
-            //        $filehelp = file_get_contents('test.md');
             $filehelp = file_get_contents($filehelp);
-            //        $filehelp = "dasdasdasdasdddddddddd s d ad sad asdsa *sdads";
             if (!empty($filehelp)) {
                 // Always add a 'prettyprint' to <pre> elements
                 echo MarkdownExtended($filehelp, array('pre' => 'prettyprint'));
