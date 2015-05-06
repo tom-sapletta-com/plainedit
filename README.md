@@ -2,11 +2,24 @@
 
 http://plainedit.com
 
+- on Start with contextual hint
+
+![img](http://plainedit.com/img/plainedit_sport_400.png)
+
+
+
+- In line with edit by cursor
+
+![img](http://plainedit.com/img/plainedit_below_400.png)
+
+
 Edytor ma służyć do edycji treści, które są przechowywane na innych serwerach.
 Docelowo ma być narzędziem komunikacyjnym w TRAKCIE tworzenia projektów pomiędzy użytkownikami w czasie.
 
 Idea
 ------------
+- Aplikacja ma zastąpić zwykły notatnik, w każdym miejscu:
+    - urządzenia mobilne, tablet, urządzenia stacjonarne, wydruk na papierze
 - bazowanie na notatniku - synonim prostoty i łatwość obsługi (edycja z klawiatury)
 - zmiana sposobu użycia samej aplikacji przez użytkownika
     - zamiast użytkownik uczyć się aplikacji 
@@ -20,13 +33,11 @@ Idea
         - postępów w projektach
         - finansowych bilansów
 
-
-Zasady
+Zasada działania
 ------------
 - Gdy kursor znajduje się w nowej linii to wyświetlają się wszystkie nie wykonane zadania
 - Gdy kursor jest na TAGu, to jest wyświetlana lista zadań
 
- 
  
 Zastosowanie
 ------------
@@ -45,7 +56,7 @@ Przykładowe zastosowanie to edycja:
 
 Technologie
 ------------
-
+Aplikacja przystosowanie do urządzeń mobilnych
 Edytor składa się z dwóch części:
 
 - Frontend 
