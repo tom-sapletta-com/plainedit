@@ -1,6 +1,6 @@
 ﻿![img](http://plainedit.com/img/Original_512.png)
 
-http://plainedit.com
+http://blog.plainedit.com
 
 - on Start with contextual hint
 

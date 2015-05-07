@@ -1,4 +1,18 @@
 <?php
+//session_start();
+//if (!isset($_SESSION["login"])){
+//  header("Location: login.php");
+//  exit();
+//}
+?><?php
+If ($_SERVER['PHP_AUTH_USER'] != 'tom' || md5($_SERVER['PHP_AUTH_PW']) != '83e7cb0c1de93b5aa3b524616ee0661b' )
+	{
+	header("WWW-Authenticate: Basic realm=Logowanie do systemu");
+	header("HTTP/1.0 401 Unauthorized");
+	echo 'błąd logowania';
+	exit();
+	}
+
 /**
  * Created by tom-sapletta-com on 2015-05-06.
  */

@@ -11,7 +11,13 @@ FUNKCJE
 ------------
 - PHP: backend language, multijęzyczność
 - PHP: plik z informacją o zmianach, logi , możliwość pobrania przez AJAX
-
+- PHP: autoryzacja, gdzie przechowywane dane do bazy danych?
+- PHP: zrobić multiuserów
+    + strona logowania
+    + baza danych
+    + wspoldzielenie niketorych informacji
+    + edycja wielu zakładek + udostepnianie czesci lub calosci
+    
 - refaktoryzacja kodu w celu uzyskania kilku odrębnych klas:
     - textarea field
         - zdarzenia
