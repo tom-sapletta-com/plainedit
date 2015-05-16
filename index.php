@@ -1,37 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION['login']))
-{
-//echo "brak";
-//  header("Location: login.php");
-//  exit();
-}
-?>
-<?php
-If ($_SERVER['PHP_AUTH_USER'] != 'tom' || md5($_SERVER['PHP_AUTH_PW']) != '83e7cb0c1de93b5aa3b524616ee0661b' )
-	{
-	header("WWW-Authenticate: Basic realm=Logowanie do systemu");
-	header("HTTP/1.0 401 Unauthorized");
-	echo '
-        <!DOCTYPE html>
-        <html>
-        <head lang="en">
-            <meta charset="UTF-8">
-          <TITLE>Logowanie</TITLE>
-        </head>
-        <BODY>
-            <h1>błąd logowania</h1>
-        </BODY>
-        </HTML>
-	';
-	exit();
-	}
-?>
-
-<?php
 /**
  * Created by tom-sapletta-com on 2015-05-06.
  */
+include_once "php/auth.php";
 
 $filedata = "data/2015.05.w1.txt";
 $fileplans = "data/2015.05.plans.txt";
@@ -73,10 +44,10 @@ require_once('php/markdown_extended.php');
             margin: 0;
             padding: 0;
             background-color: #222;
-            margin-left: 10px;
+            margin-left: 0px;
         }
         .page .parts {
-              margin-left: 36px;
+              margin-left: 70px;
         }
         .text {
             border: 1px solid darkgreen;
@@ -121,7 +92,7 @@ require_once('php/markdown_extended.php');
 
         .tasks_by_tag_done, .tasks_by_tag_notdone, .tasks_done, .tasks_not_done {
             width: 638px;
-            height: 110px;
+            height: 200px;
             margin: 0;
             padding: 0;
 
@@ -135,11 +106,13 @@ require_once('php/markdown_extended.php');
         .tasks_by_tag_done, .tasks_by_tag_notdone {
             width: 230px;
             font-size: 12pt;
+
         }
 
         .tasks_done, .tasks_by_tag_done {
-            background-color: #555;
-            font-size: 14pt;
+            background-color: #333;
+            font-size: 13pt;
+            z-index: 9999;
         }
 
         .tasks_not_done, .tasks_by_tag_notdone {
@@ -228,8 +201,8 @@ require_once('php/markdown_extended.php');
 
         .weekText textarea {
             width: 595px;
-            /*height = font-size x 119*/
-            height: 3332px;
+            /*height = height z .weekCheckItem x 149*/
+            height: 5572px;
             font-size: 25px;
             padding: 0 0 3px 3px;
             line-height: 28px;
@@ -245,7 +218,10 @@ require_once('php/markdown_extended.php');
         .tagEdit {
             /*position: fixed;*/
             /*top: 25px;*/
-            height: 150px;
+
+            /* ODLEGŁOŚ OD TOP */
+            height: 234px;
+
             /*position: absolute;*/
             width: 640px;
             z-index: 999;
@@ -337,7 +313,7 @@ require_once('php/markdown_extended.php');
         }
 
         .navi a {
-            color: greenyellow;
+            color: green;
             font-size: 17pt;
         }
 
@@ -369,17 +345,41 @@ require_once('php/markdown_extended.php');
             border: 0;
         }
         .left_navi li div {
-
           border: 2px solid #333;
-          width: 12px;
+          width: 50px;
           background-color: #444;
           margin: 0;
           padding: 2px 8px 2px 8px;
         }
         .left_navi .navi a {
-        font-size: 11pt;
+            font-size: 14pt;
           text-decoration: blink;
         }
+        .left_navi .navi span {
+            font-size: 19pt;
+            color: greenyellow;
+        }
+        .left_navi .navi div:hover {
+            border: 1px solid green;
+        }
+
+        .left_navi .navi .submenu {
+                    /* width: 40px; */
+                }
+        .left_navi .navi .submenu a{
+                    font-size: 13pt;
+                    color: yellow;
+
+        }
+        .left_navi .navi .submenu div {
+            width: 55px;
+            padding: 3px 0px 3px 10px;
+        }
+
+        .left_navi .navi .submenu div:hover {
+            border: 1px solid yellow;
+        }
+
     </style>
 </head>
 <body class="page">
@@ -387,14 +387,23 @@ require_once('php/markdown_extended.php');
 
         <div class="left_navi">
             <ul class="navi">
-                <li><a href="#todo" id="navi_todo"><div>Z a d a n i a</div></a></li>
-                <li><a href="#projects" id="navi_projects"><div>P r o j e k t y</div></a></li>
-                <li><a href="#plans" id="navi_plans"><div>P l a n y</div></a></li>
-                <li><a href="#budget" id="navi_budget"><div> B u d ż e t</div></a></li>
-                <li><a href="#contacts" id="navi_contacts"><div> K o n t a k t y</div></a></li>
-                <li><a href="#settings" id="navi_settings"><div> U s t a w i e n i a</div></a></li>
-                <li><a href="#affirmations" id="navi_affirmations"><div> +</div></a></li>
-                <li><a href="#help" id="navi_help"><div> P o m o c</div></a></li>
+                <li><a href="#todo" id="navi_todo"><div><span>Z</span> a d a n i a</div></a></li>
+
+                <li class="submenu"><a href="#2015_04"><div>&ltApril]</div></a></li>
+                <li class="submenu"><a href="#2015_04_1-7"><div>[1-7]</div></a></li>
+                <li class="submenu"><a href="#2015_04_7-4"><div>[7-14]</div></a></li>
+                <li class="submenu"><a href="#2015_04_14_21"><div>[14-21]</div></a></li>
+                <li class="submenu"><a href="#2015_04_21-28"><div>[21-28] </div></a></li>
+                <li class="submenu"><a href="#2015_04_28"><div>[28-4] </div></a></li>
+                <li class="submenu"><a href="#2015_05"><div> [Mai&gt </div></a></li>
+
+                <li><a href="#projects" id="navi_projects"><div><span>P</span> r o j e k t y</div></a></li>
+                <li><a href="#plans" id="navi_plans"><div><span>I</span> d e e</div></a></li>
+                <li><a href="#budget" id="navi_budget"><div><span>B</span> u d ż e t</div></a></li>
+                <li><a href="#contacts" id="navi_contacts"><div><span>K</span> o n t a k t y</div></a></li>
+                <li><a href="#settings" id="navi_settings"><div><span>U</span> s t a w i e n i a</div></a></li>
+                <li><a href="#affirmations" id="navi_affirmations"><div><span>A</span> f i r m a c j e</div></a></li>
+                <li><a href="#help" id="navi_help"><div><span>I</span> n f o</div></a></li>
             </ul>
         </div>
 
@@ -438,7 +447,7 @@ require_once('php/markdown_extended.php');
 
         <div class="weeks">
             <ul class="navi">
-
+<!--
                 <li><a href="#2015_04"><div>&ltApril]</div></a></li>
                 <li><a href="#2015_04_1-7"><div> [1-7] </div></a></li>
                 <li><a href="#2015_04_7-4"><div> [7-14] </div></a></li>
@@ -446,6 +455,12 @@ require_once('php/markdown_extended.php');
                 <li><a href="#2015_04_21-28"><div> [21-28] </div></a></li>
                 <li><a href="#2015_04_28"><div> [28-4] </div></a></li>
                 <li><a href="#2015_05"><div> [Mai&gt </div></a></li>
+                -->
+
+                <li><a href="#2015_04"><div>[START/STOP]</div></a></li>
+                <li><a href="#2015_04_7-4"><div> Zadanie: do task 1 </div></a></li>
+                <li><a href="#2015_04_1-7"><div> Trwa: 1 h </div></a></li>
+                <li><a href="#2015_05"><div>[PREV] [NEXT]</div></a></li>
             </ul>
         </div>
 
@@ -481,7 +496,7 @@ require_once('php/markdown_extended.php');
     <div class="weekEdit" id="todo">
         <div class="weekCheck">
             <?php
-            for ($x = 1; $x < 120; $x++) {
+            for ($x = 1; $x < 200; $x++) {
                 if (strlen($x) < 2)
                     $x = '0' . $x;
                 if (strlen($x) < 3)
